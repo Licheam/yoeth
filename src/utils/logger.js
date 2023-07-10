@@ -1,4 +1,4 @@
-import { std } from '../../deps.js';
+import { std } from '../../deps.ts';
 import { Time } from './time.ts'
 
 export default class Logger {

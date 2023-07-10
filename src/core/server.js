@@ -1,4 +1,4 @@
-import { std, msgpack } from "../../deps.js";
+import { std, msgpack } from "../../deps.ts";
 import { Logger } from "../utils/mod.js";
 import { Session } from "./session.js";
 

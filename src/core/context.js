@@ -1,5 +1,5 @@
 import { Logger, defineProperty, Random, isConstructor } from "../utils/mod.js";
-import { std } from "../../deps.js";
+import { std } from "../../deps.ts";
 import segment from "./segment.js";
 
 export var Next;
