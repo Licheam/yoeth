@@ -5,7 +5,7 @@ export function apply({ context, config, segment })  {
     context.middleware(async (session, next) => {
         next()
         if(session.content === 'Hello') {
-            session.send = 'World'
+            session.send('World')
         }
     })
 }
