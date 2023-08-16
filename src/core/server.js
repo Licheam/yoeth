@@ -1,4 +1,4 @@
-import { std, msgpack } from "../../deps.ts";
+import { std } from "../../deps.ts";
 import { Logger } from "../utils/mod.js";
 import { Session } from "./session.js";
 
@@ -25,7 +25,7 @@ export class Server {
   onmessage(e, flag) {
     let parsed;
     try {
-      typeof e.data === "string" ? (parsed = JSON.parse(e.data)) : (parsed = msgpack.decode(e.data));
+      typeof e.data === "string" ? (parsed = JSON.parse(e.data)) : (parsed = std.decode(e.data));
     } catch (error) {
       logger.error(`消息解析失败，${flag}，原始消息为“${e.data}”`)
     }
@@ -175,7 +175,7 @@ export class Server {
     };
     let task = [];
     let serializableData;
-    isMessagePack ? (serializableData = msgpack.encode(data)) : (serializableData = JSON.stringify(data));
+    isMessagePack ? (serializableData = std.encode(data)) : (serializableData = JSON.stringify(data));
     this.ws_registry.forEach((v) => {
       if (v.status === "open") {
         task.push(

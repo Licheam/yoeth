@@ -1,4 +1,4 @@
-import { parse } from "https://deno.land/std@0.193.0/yaml/parse.ts"
+import { parse } from "https://deno.land/std@0.198.0/yaml/parse.ts"
 
 const config = parse(await Deno.readTextFile("./config.yml"))
 const Yoeth = await import("../src/mod.js")
